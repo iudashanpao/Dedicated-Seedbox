@@ -70,9 +70,11 @@ tput sgr0; clear
 normal_1; echo "Start Installing Seedbox Environment"; warn_2
 source <(wget -qO- https://raw.githubusercontent.com/jerry048/Seedbox-Components/main/seedbox_installation.sh)
 Update
-Decision qBittorrent
-Decision Deluge
-Decision autoremove-torrents
+# Decision qBittorrent
+# Decision Deluge
+# Decision autoremove-torrents
+
+Deluge
 
 
 ## Tweaking
@@ -85,7 +87,7 @@ Network_Other_Tweaking
 Scheduler_Tweaking
 file_open_limit_Tweaking
 kernel_Tweaking
-Decision Tweaked_BBR
+Tweaked_BBR
 
 ## Configue Boot Script
 tput sgr0; clear
@@ -96,6 +98,6 @@ tput sgr0; clear
 
 normal_1; echo "Seedbox Installation Complete"
 publicip=$(curl https://ipinfo.io/ip)
-[[ ! -z "$qbport" ]] && echo "qBittorrent $version is successfully installed, visit at $publicip:$qbport"
+# [[ ! -z "$qbport" ]] && echo "qBittorrent $version is successfully installed, visit at $publicip:$qbport"
 [[ ! -z "$deport" ]] && echo "Deluge $Deluge_Ver is successfully installed, visit at $publicip:$dewebport"
 [[ ! -z "$bbrx" ]] && echo "Tweaked BBR is successfully installed, please reboot for it to take effect"
